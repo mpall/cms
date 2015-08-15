@@ -1,0 +1,9 @@
+{ "detail" : {
+	"shortDescription": "Great Draws",
+	"description": "This is a detailed description",
+	"dimensions": {
+		"height": "1000",
+		"width": "1500",
+		"depth": "500"}
+	}
+}

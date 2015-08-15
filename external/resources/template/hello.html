@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Title of the document</title>
+</head>
+<body>
+<div id="template-name-from-thymeleaf" th:text="'Template name: ' + ${execInfo.templateName}" />
+<div id="template-name" th:text="'Template name: ' + ${template}" />
+<div id="jsonDataItem" th:text="'name: ' + ${data.name}" />
+</body>
+</html>
