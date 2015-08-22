@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -18,12 +20,16 @@ import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@TestPropertySource("classpath:application.properties")
+@TestPropertySource("classpath:application-test.properties")
 @ContextConfiguration(classes={com.pallot.cms.CMSApplication.class})
+@ActiveProfiles(profiles="integration")
 public class CMSControllerTests {
 
     @Autowired
     private WebApplicationContext wac;
+    
+    @Autowired
+    private Environment env;
 
     private MockMvc mockMvc;
 
@@ -40,5 +46,4 @@ public class CMSControllerTests {
           .andExpect(content().string(containsString("Great Pen")));
     }
     
-    //TODO - Json data parse error
 }
